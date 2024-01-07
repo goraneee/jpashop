@@ -2,7 +2,9 @@ package jpabook.jpashop.domain;
 
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
@@ -13,6 +15,7 @@ import java.util.List;
 @Table(name = "orders")
 @Getter
 @Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Order {
 
     @Id
@@ -24,7 +27,7 @@ public class Order {
     @JoinColumn(name = "member_id") // FK 이름
     private Member member;
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL) //?????
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems = new ArrayList<>();
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -88,12 +91,4 @@ public class Order {
         }
         return totalPrice;
     }
-
-
-
-
-
-
-
-
 }
