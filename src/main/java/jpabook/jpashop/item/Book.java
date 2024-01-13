@@ -13,6 +13,6 @@ public class Book  extends Item {
 
     private String author;
 
-    private String ispn;
+    private String isbn;
 
 }
