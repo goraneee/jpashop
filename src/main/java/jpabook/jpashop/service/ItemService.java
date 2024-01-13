@@ -1,5 +1,6 @@
 package jpabook.jpashop.service;
 
+import jpabook.jpashop.controller.BookForm;
 import jpabook.jpashop.domain.Member;
 import jpabook.jpashop.item.Item;
 import jpabook.jpashop.repository.ItemRepository;
@@ -28,6 +29,15 @@ public class ItemService {
 
     public Item findOne(Long id){
         return itemRepository.findOne(id);
+    }
+
+    @Transactional
+    public Item updateItem(Long itemId, String name, int price, int stockQuantity){
+        Item findItem = itemRepository.findOne(itemId);
+        findItem.setName(name);
+        findItem.setPrice(price);
+        findItem.setStockQuantity(stockQuantity);
+        return findItem;
     }
 
 }
