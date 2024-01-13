@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -44,4 +45,19 @@ public class ItemController {
         model.addAttribute("items", items);
         return "items/itemList";
     }
+
+    @GetMapping("/items/{itemId}/edit")
+    public String updateForm(@PathVariable("itemId") Long itemId, Model model){
+        Book item = (Book) itemService.findOne(itemId);
+        BookForm form = new BookForm();
+        form.setId(item.getId());
+        form.setName(item.getName());
+        form.setIsbn(item.getIsbn());
+        form.setAuthor(item.getAuthor());
+        form.setStockQuantity(item.getStockQuantity());
+        form.setPrice(item.getPrice());
+        model.addAttribute("form", form);
+        return "items/updateItem";
+    }
+
 }
