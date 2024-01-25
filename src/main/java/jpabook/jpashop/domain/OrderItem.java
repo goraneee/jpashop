@@ -1,16 +1,15 @@
 package jpabook.jpashop.domain;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import jpabook.jpashop.item.Item;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
+@Builder
 public class OrderItem {
 
     @Id

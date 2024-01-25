@@ -1,9 +1,9 @@
 package jpabook.jpashop.item;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import jpabook.jpashop.domain.Category;
-import lombok.Getter;
-import lombok.Setter;
+import jpabook.jpashop.exception.NotEnoughStockException;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +13,9 @@ import java.util.List;
 @DiscriminatorColumn(name = "dtype")
 @Getter
 @Setter
+//@AllArgsConstructor
+//@NoArgsConstructor
+//@Builder
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

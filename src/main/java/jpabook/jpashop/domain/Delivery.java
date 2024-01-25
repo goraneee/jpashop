@@ -1,6 +1,5 @@
 package jpabook.jpashop.domain;
-
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,10 +20,5 @@ public class Delivery {
 
     @Enumerated(EnumType.STRING)
     private DeliveryStatus status;  // READY, COMP
-
-
-
-
-
 
 }

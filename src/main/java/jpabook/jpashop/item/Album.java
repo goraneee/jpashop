@@ -1,16 +1,16 @@
 package jpabook.jpashop.item;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import jpabook.jpashop.item.Item;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @DiscriminatorValue("A")
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Album extends Item {
 
 

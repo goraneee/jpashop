@@ -1,14 +1,15 @@
 package jpabook.jpashop.item;
 
-import jakarta.persistence.*;
-import jpabook.jpashop.item.Item;
-import lombok.Getter;
-import lombok.Setter;
+import javax.persistence.*;
+import lombok.*;
 
 @Entity
 @DiscriminatorValue("M")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Movie extends Item {
 
     private String director;
