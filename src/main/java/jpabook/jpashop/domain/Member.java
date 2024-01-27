@@ -30,6 +30,7 @@ public class Member {
     @Column(name = "ADDRESS")
     private Address address;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "member") // id 뺴고??
     private List<Order> orders = new ArrayList<>();
 
