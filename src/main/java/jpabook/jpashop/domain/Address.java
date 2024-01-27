@@ -1,6 +1,7 @@
 package jpabook.jpashop.domain;
 
-import javax.persistence.*;
+
+import jakarta.persistence.Embeddable;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

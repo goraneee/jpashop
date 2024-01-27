@@ -1,10 +1,6 @@
 package jpabook.jpashop;
-
-
-
-import javax.persistence.*;
-
 import jakarta.annotation.PostConstruct;
+import jakarta.persistence.EntityManager;
 import jpabook.jpashop.domain.*;
 import jpabook.jpashop.item.Book;
 import lombok.RequiredArgsConstructor;
@@ -27,7 +23,6 @@ public class InitDb {
 
     @Service
     @Transactional
-//    @RequiredArgsConstructor
     static class InitService {
 
         @Autowired

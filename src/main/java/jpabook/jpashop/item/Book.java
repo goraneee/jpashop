@@ -1,7 +1,6 @@
 package jpabook.jpashop.item;
+import jakarta.persistence.*;
 
-import jakarta.persistence.DiscriminatorValue;
-import javax.persistence.*;
 import lombok.*;
 
 @Entity

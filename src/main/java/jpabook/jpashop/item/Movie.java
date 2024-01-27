@@ -1,6 +1,6 @@
 package jpabook.jpashop.item;
+import jakarta.persistence.*;
 
-import javax.persistence.*;
 import lombok.*;
 
 @Entity
